@@ -24,50 +24,76 @@ function App() {
 
 
       {/* ================= HOME ================= */}
-      <section id="home" className="hero">
 
-        <div className="hero-overlay"></div>
+<section id="home" className="hero-section">
 
-        <div className="hero-content">
+  <div className="hero-container">
 
-          <p className="hero-small">WELCOME TO MY PORTFOLIO</p>
+    {/* LEFT — PROFESSIONAL PHOTO */}
 
-          <h1 className="hero-name">
-            Madhumitha
-          </h1>
+    <div className="hero-photo-wrapper">
 
-          <h2 className="hero-title">
-            AI / ML DEVELOPER
-          </h2>
+      <div className="hero-photo-frame">
 
-          <p className="hero-keywords">
-            INNOVATION <span>•</span> IDEAS INTO INTELLIGENCE{" "}
-            <span>•</span> EXPLORATION <span>•</span> CREATION
-          </p>
+        <img
+          src="/madhu professionalpic.jpeg"
+          alt="Madhumitha - AI ML Developer"
+          className="hero-photo"
+        />
 
-          <p className="hero-description">
-            I transform data, ideas, and complex problems into intelligent
-            solutions — powered by AI, driven by innovation, and built for
-            real-world impact.
-          </p>
+      </div>
 
-          <div className="hero-buttons">
-            <a href="#projects" className="primary-button">
-              Explore My Work
-            </a>
+    </div>
 
-            <a href="#contact" className="secondary-button">
-              Contact Me
-            </a>
-          </div>
 
-        </div>
+    {/* RIGHT — DETAILS */}
 
-        <div className="scroll-text">
-          SCROLL TO EXPLORE ↓
-        </div>
+    <div className="hero-content">
 
-      </section>
+      <p className="hero-label">
+        AI / ML DEVELOPER
+      </p>
+
+      <h1>
+        Madhumitha
+      </h1>
+
+      <p className="hero-keywords">
+        INNOVATION&nbsp; • &nbsp;IDEAS INTO INTELLIGENCE
+        &nbsp; • &nbsp;EXPLORATION&nbsp; • &nbsp;CREATION
+      </p>
+
+      <p className="hero-description">
+        I transform data, ideas, and complex problems into
+        intelligent solutions — powered by AI, driven by
+        innovation, and built for real-world impact.
+      </p>
+
+      <div className="hero-buttons">
+
+        <a
+          href="#projects"
+          className="hero-primary-button"
+        >
+          Explore My Work ↗
+        </a>
+
+        <a
+          href="/MADHUMITHA J CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-secondary-button"
+        >
+          View Resume ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* ================= ABOUT ================= */}
@@ -562,8 +588,7 @@ function App() {
     PROJECT DETAILS MODAL
     ========================================================= */}
 
-{selectedProject === "xsafe" && (
-
+{selectedProject && (
   <div
     className="project-modal-overlay"
     onClick={() => setSelectedProject(null)}
@@ -574,166 +599,7 @@ function App() {
       onClick={(event) => event.stopPropagation()}
     >
 
-      <button
-        type="button"
-        className="modal-close"
-        onClick={() => setSelectedProject(null)}
-        aria-label="Close project details"
-      >
-        ×
-      </button>
-
-      <span className="modal-label">
-        PROJECT 01
-      </span>
-
-      <h2>
-        XSafeNet
-      </h2>
-
-      <h4>
-        Explainable Multimodal Road-Safety Intelligence
-      </h4>
-
-      <div className="modal-section">
-
-        <h5>
-          Introduction
-        </h5>
-
-        <p>
-          XSafeNet is an Explainable Multimodal Predictive Risk
-          Intelligence Framework designed for vehicle telemetry and
-          Indian road hazards. The system combines computer vision,
-          vehicle telemetry, weather context, multimodal risk fusion,
-          calibrated risk prediction, and explainable AI to generate
-          an overall road-safety assessment.
-        </p>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Objectives
-        </h5>
-
-        <ul>
-          <li>
-            Detect road hazards from road-scene video using YOLO.
-          </li>
-
-          <li>
-            Analyze vehicle telemetry such as speed, acceleration,
-            braking, GPS, and time-related information.
-          </li>
-
-          <li>
-            Incorporate weather conditions into road-risk analysis.
-          </li>
-
-          <li>
-            Combine multiple sources of information through
-            multimodal risk fusion.
-          </li>
-
-          <li>
-            Predict an overall road-safety risk score.
-          </li>
-
-          <li>
-            Provide calibrated confidence and uncertainty information
-            for risk predictions.
-          </li>
-
-          <li>
-            Explain important factors influencing the predicted risk
-            using explainable AI techniques.
-          </li>
-        </ul>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Workflow
-        </h5>
-
-        <p className="modal-workflow">
-          Road Video → YOLO Hazard Detection → Vehicle Telemetry
-          → Weather Context → AEMRF-Net → Risk Prediction
-          → CalibRisk Intelligence → Explainable AI
-          → Overall Safety Report
-        </p>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Key Features
-        </h5>
-
-        <ul>
-          <li>Road hazard detection</li>
-          <li>Vehicle telemetry analysis</li>
-          <li>Weather-aware risk analysis</li>
-          <li>Multimodal risk fusion</li>
-          <li>Risk prediction</li>
-          <li>Uncertainty calibration</li>
-          <li>SHAP-based explainability</li>
-          <li>Overall safety reporting</li>
-        </ul>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Technologies
-        </h5>
-
-        <div className="modal-tech">
-          <span>Python</span>
-          <span>YOLO</span>
-          <span>OpenCV</span>
-          <span>Scikit-learn</span>
-          <span>Pandas</span>
-          <span>NumPy</span>
-          <span>SHAP</span>
-          <span>Streamlit</span>
-        </div>
-
-      </div>
-
-      <a
-        href="https://github.com/Madhumitha272005/XSAFENET"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="modal-github"
-      >
-        View XSafeNet on GitHub ↗
-      </a>
-
-    </div>
-
-  </div>
-
-)}
-
-
-{selectedProject === "fraud" && (
-
-  <div
-    className="project-modal-overlay"
-    onClick={() => setSelectedProject(null)}
-  >
-
-    <div
-      className="project-modal"
-      onClick={(event) => event.stopPropagation()}
-    >
+      {/* CLOSE BUTTON */}
 
       <button
         type="button"
@@ -744,437 +610,749 @@ function App() {
         ×
       </button>
 
-      <span className="modal-label">
-        PROJECT 02
-      </span>
 
-      <h2>
-        Credit Card Fraud Detection
-      </h2>
+      {/* =====================================================
+          PROJECT 01 — XSAFENET
+          ===================================================== */}
 
-      <h4>
-        Machine Learning Based Fraud Analysis
-      </h4>
+      {selectedProject === "xsafe" && (
+        <>
+          <div className="modal-top-labels">
+            <span className="modal-label">
+              Explainable Multimodal AI
+            </span>
 
-      <div className="modal-section">
+            <span className="modal-featured">
+              ✦ Featured Project
+            </span>
+          </div>
 
-        <h5>
-          Introduction
-        </h5>
+          <h2>XSafeNet</h2>
 
-        <p>
-          Credit Card Fraud Detection is a machine learning project
-          developed to identify potentially fraudulent transactions
-          from highly imbalanced transaction data. The project
-          focuses on preprocessing transaction data, training
-          classification models, and evaluating their ability to
-          distinguish fraudulent transactions from legitimate ones.
-        </p>
+          <h4>
+            Explainable Multimodal Road-Safety Intelligence
+          </h4>
 
-      </div>
 
-      <div className="modal-section">
+          {/* SUMMARY */}
 
-        <h5>
-          Objectives
-        </h5>
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ✦ SUMMARY
+            </div>
 
-        <ul>
-          <li>
-            Analyze transaction data to identify suspicious patterns.
-          </li>
+            <p>
+              XSafeNet is an Explainable Multimodal Predictive Risk
+              Intelligence Framework designed to assess road-safety
+              risks by combining road-hazard detection, vehicle
+              telemetry, weather context, multimodal risk fusion,
+              calibrated risk prediction, and explainable AI.
+            </p>
+          </div>
 
-          <li>
-            Handle highly imbalanced fraud-detection data.
-          </li>
 
-          <li>
-            Apply machine learning classification techniques.
-          </li>
+          {/* PROBLEM STATEMENT */}
 
-          <li>
-            Train and evaluate a Random Forest model.
-          </li>
+          <div className="modal-info-box problem-box">
+            <div className="modal-box-title">
+              ⚠ PROBLEM STATEMENT
+            </div>
 
-          <li>
-            Measure model performance using appropriate evaluation
-            metrics.
-          </li>
+            <p>
+              Road-safety risks are influenced by multiple factors
+              such as visible road hazards, vehicle speed,
+              acceleration, braking behaviour, weather conditions,
+              and surrounding context. Traditional systems may
+              analyze these factors separately, making it difficult
+              to obtain a unified and explainable assessment of
+              overall road risk.
+            </p>
+          </div>
 
-          <li>
-            Use ROC-AUC to evaluate the model's ability to distinguish
-            fraudulent and legitimate transactions.
-          </li>
-        </ul>
 
-      </div>
+          {/* PROPOSED SOLUTION */}
 
-      <div className="modal-section">
+          <div className="modal-info-box solution-box">
+            <div className="modal-box-title">
+              ◈ PROPOSED SOLUTION
+            </div>
 
-        <h5>
-          Workflow
-        </h5>
+            <p>
+              XSafeNet integrates computer vision, vehicle telemetry,
+              weather information, multimodal risk fusion, calibrated
+              prediction, and explainable AI into a unified framework.
+              The system detects road hazards using YOLO, combines
+              them with vehicle and environmental information through
+              AEMRF-Net, and generates an overall road-safety risk
+              prediction with contributing factors and uncertainty.
+            </p>
+          </div>
 
-        <p className="modal-workflow">
-          Transaction Dataset → Data Preprocessing → Feature Analysis
-          → Model Training → Fraud Prediction → Model Evaluation
-        </p>
 
-      </div>
+          {/* OBJECTIVES */}
 
-      <div className="modal-section">
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◎ OBJECTIVES
+            </div>
 
-        <h5>
-          Key Features
-        </h5>
+            <ul className="modal-list">
+              <li>
+                Detect road hazards from road-scene images and videos
+                using YOLO.
+              </li>
 
-        <ul>
-          <li>Transaction data preprocessing</li>
-          <li>Fraud and non-fraud classification</li>
-          <li>Imbalanced-data analysis</li>
-          <li>Random Forest classification</li>
-          <li>ROC-AUC evaluation</li>
-          <li>Model performance analysis</li>
-        </ul>
+              <li>
+                Analyze vehicle telemetry such as speed,
+                acceleration, braking, GPS, and time information.
+              </li>
 
-      </div>
+              <li>
+                Incorporate weather conditions into road-risk
+                analysis.
+              </li>
 
-      <div className="modal-section">
+              <li>
+                Fuse visual, telemetry, and weather information
+                using multimodal risk analysis.
+              </li>
 
-        <h5>
-          Technologies
-        </h5>
+              <li>
+                Predict an overall road-safety risk score.
+              </li>
 
-        <div className="modal-tech">
-          <span>Python</span>
-          <span>Pandas</span>
-          <span>NumPy</span>
-          <span>Scikit-learn</span>
-          <span>Random Forest</span>
-          <span>ROC-AUC</span>
-          <span>Jupyter Notebook</span>
-        </div>
+              <li>
+                Provide calibrated confidence and uncertainty
+                information.
+              </li>
 
-      </div>
+              <li>
+                Explain important factors influencing risk using
+                explainable AI.
+              </li>
+            </ul>
+          </div>
 
-      <a
-        href="https://github.com/Madhumitha272005/credit-card-fraud-detection"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="modal-github"
-      >
-        View Fraud Detection on GitHub ↗
-      </a>
+
+          {/* WORKFLOW */}
+
+          <div className="modal-info-box workflow-box">
+            <div className="modal-box-title">
+              ⇢ WORKFLOW
+            </div>
+
+            <p className="modal-workflow">
+              Road Video → YOLO Hazard Detection → Hazard Risk
+              Analysis → Vehicle Telemetry → Weather Context →
+              AEMRF-Net → Risk Prediction → CalibRisk Intelligence →
+              Explainable AI → Overall Safety Report
+            </p>
+          </div>
+
+
+          {/* KEY FEATURES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◉ KEY FEATURES
+            </div>
+
+            <div className="modal-feature-grid">
+              <span>Road Hazard Detection</span>
+              <span>Vehicle Telemetry Analysis</span>
+              <span>Weather-Aware Risk Analysis</span>
+              <span>Multimodal Risk Fusion</span>
+              <span>Risk Prediction</span>
+              <span>CalibRisk Intelligence</span>
+              <span>SHAP Explainability</span>
+              <span>Overall Safety Reporting</span>
+            </div>
+          </div>
+
+
+          {/* TOOLS */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ⚙ TOOLS & TECHNOLOGIES
+            </div>
+
+            <div className="modal-tech">
+              <span>Python</span>
+              <span>YOLO</span>
+              <span>OpenCV</span>
+              <span>Scikit-learn</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>SHAP</span>
+              <span>Streamlit</span>
+              <span>OpenWeatherMap</span>
+            </div>
+          </div>
+
+
+          <a
+            href="https://github.com/Madhumitha272005/XSAFENET"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="modal-github"
+          >
+            View XSafeNet on GitHub ↗
+          </a>
+        </>
+      )}
+
+
+      {/* =====================================================
+          PROJECT 02 — CREDIT CARD FRAUD DETECTION
+          ===================================================== */}
+
+      {selectedProject === "fraud" && (
+        <>
+          <div className="modal-top-labels">
+            <span className="modal-label">
+              Machine Learning
+            </span>
+
+            <span className="modal-featured">
+              ✦ Featured Project
+            </span>
+          </div>
+
+          <h2>Credit Card Fraud Detection</h2>
+
+          <h4>
+            Machine Learning Based Fraud Analysis
+          </h4>
+
+
+          {/* SUMMARY */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ✦ SUMMARY
+            </div>
+
+            <p>
+              Credit Card Fraud Detection is a machine learning
+              project developed to identify potentially fraudulent
+              transactions from highly imbalanced transaction data.
+              The system performs data preprocessing, feature
+              analysis, model training, fraud prediction, and
+              performance evaluation.
+            </p>
+          </div>
+
+
+          {/* PROBLEM STATEMENT */}
+
+          <div className="modal-info-box problem-box">
+            <div className="modal-box-title">
+              ⚠ PROBLEM STATEMENT
+            </div>
+
+            <p>
+              Credit card transaction datasets contain a very small
+              proportion of fraudulent transactions compared with
+              legitimate transactions. This class imbalance makes
+              fraud detection challenging because a model must
+              identify rare fraudulent patterns without incorrectly
+              classifying legitimate transactions.
+            </p>
+          </div>
+
+
+          {/* PROPOSED SOLUTION */}
+
+          <div className="modal-info-box solution-box">
+            <div className="modal-box-title">
+              ◈ PROPOSED SOLUTION
+            </div>
+
+            <p>
+              The project applies data preprocessing, feature
+              analysis, and machine learning classification to
+              distinguish fraudulent transactions from legitimate
+              transactions. A Random Forest classifier is trained
+              and evaluated using suitable classification metrics,
+              including ROC-AUC.
+            </p>
+          </div>
+
+
+          {/* OBJECTIVES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◎ OBJECTIVES
+            </div>
+
+            <ul className="modal-list">
+              <li>
+                Analyze credit card transaction data.
+              </li>
+
+              <li>
+                Preprocess and prepare transaction features.
+              </li>
+
+              <li>
+                Handle highly imbalanced fraud-detection data.
+              </li>
+
+              <li>
+                Identify suspicious transaction patterns.
+              </li>
+
+              <li>
+                Train a Random Forest classification model.
+              </li>
+
+              <li>
+                Predict fraudulent and legitimate transactions.
+              </li>
+
+              <li>
+                Evaluate model performance using ROC-AUC and
+                classification metrics.
+              </li>
+            </ul>
+          </div>
+
+
+          {/* WORKFLOW */}
+
+          <div className="modal-info-box workflow-box">
+            <div className="modal-box-title">
+              ⇢ WORKFLOW
+            </div>
+
+            <p className="modal-workflow">
+              Transaction Dataset → Data Preprocessing → Feature
+              Analysis → Model Training → Fraud Prediction →
+              Model Evaluation
+            </p>
+          </div>
+
+
+          {/* KEY FEATURES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◉ KEY FEATURES
+            </div>
+
+            <div className="modal-feature-grid">
+              <span>Transaction Data Analysis</span>
+              <span>Data Preprocessing</span>
+              <span>Fraud Classification</span>
+              <span>Imbalanced Data Analysis</span>
+              <span>Random Forest Model</span>
+              <span>Fraud Prediction</span>
+              <span>ROC-AUC Evaluation</span>
+              <span>Model Performance Analysis</span>
+            </div>
+          </div>
+
+
+          {/* TOOLS */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ⚙ TOOLS & TECHNOLOGIES
+            </div>
+
+            <div className="modal-tech">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Scikit-learn</span>
+              <span>Random Forest</span>
+              <span>ROC-AUC</span>
+              <span>Jupyter Notebook</span>
+            </div>
+          </div>
+
+
+          <a
+            href="https://github.com/Madhumitha272005/credit-card-fraud-detection"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="modal-github"
+          >
+            View Fraud Detection on GitHub ↗
+          </a>
+        </>
+      )}
+
+
+      {/* =====================================================
+          PROJECT 03 — DEEPFAKE VOICE DETECTION
+          ===================================================== */}
+
+      {selectedProject === "deepfake" && (
+        <>
+          <div className="modal-top-labels">
+            <span className="modal-label">
+              AI Audio Security
+            </span>
+
+            <span className="modal-featured">
+              ✦ Featured Project
+            </span>
+          </div>
+
+          <h2>Deepfake Voice Detection</h2>
+
+          <h4>
+            AI-Based Synthetic Audio Detection
+          </h4>
+
+
+          {/* SUMMARY */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ✦ SUMMARY
+            </div>
+
+            <p>
+              Deepfake Voice Detection is an AI-based audio security
+              project designed to distinguish genuine human speech
+              from synthetic or manipulated voice recordings. The
+              system uses audio preprocessing, feature extraction,
+              spectrogram analysis, and machine learning to identify
+              characteristics associated with deepfake audio.
+            </p>
+          </div>
+
+
+          {/* PROBLEM STATEMENT */}
+
+          <div className="modal-info-box problem-box">
+            <div className="modal-box-title">
+              ⚠ PROBLEM STATEMENT
+            </div>
+
+            <p>
+              AI-generated and manipulated voice recordings can
+              closely resemble genuine human speech, making manual
+              identification difficult. An automated system is
+              required to analyze audio characteristics and identify
+              patterns that may indicate synthetic or manipulated
+              speech.
+            </p>
+          </div>
+
+
+          {/* PROPOSED SOLUTION */}
+
+          <div className="modal-info-box solution-box">
+            <div className="modal-box-title">
+              ◈ PROPOSED SOLUTION
+            </div>
+
+            <p>
+              The project processes voice recordings, extracts
+              meaningful audio features using Librosa, represents
+              audio characteristics through spectrograms, and uses
+              machine learning classification to distinguish between
+              genuine and deepfake audio. Explainability techniques
+              can also be used to understand model predictions.
+            </p>
+          </div>
+
+
+          {/* OBJECTIVES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◎ OBJECTIVES
+            </div>
+
+            <ul className="modal-list">
+              <li>
+                Analyze audio recordings for deepfake characteristics.
+              </li>
+
+              <li>
+                Preprocess speech signals for machine learning.
+              </li>
+
+              <li>
+                Extract meaningful features from voice recordings.
+              </li>
+
+              <li>
+                Generate spectrogram-based representations.
+              </li>
+
+              <li>
+                Classify genuine and synthetic audio.
+              </li>
+
+              <li>
+                Evaluate the classification model.
+              </li>
+
+              <li>
+                Explore explainability for understanding model
+                predictions.
+              </li>
+            </ul>
+          </div>
+
+
+          {/* WORKFLOW */}
+
+          <div className="modal-info-box workflow-box">
+            <div className="modal-box-title">
+              ⇢ WORKFLOW
+            </div>
+
+            <p className="modal-workflow">
+              Audio Input → Audio Preprocessing → Feature Extraction
+              → Spectrogram Analysis → ML Classification →
+              Deepfake Prediction → Explainability
+            </p>
+          </div>
+
+
+          {/* KEY FEATURES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◉ KEY FEATURES
+            </div>
+
+            <div className="modal-feature-grid">
+              <span>Audio Preprocessing</span>
+              <span>Feature Extraction</span>
+              <span>Librosa Analysis</span>
+              <span>Spectrogram Analysis</span>
+              <span>Deepfake Classification</span>
+              <span>Model Evaluation</span>
+              <span>Streamlit Application</span>
+              <span>Explainability Exploration</span>
+            </div>
+          </div>
+
+
+          {/* TOOLS */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ⚙ TOOLS & TECHNOLOGIES
+            </div>
+
+            <div className="modal-tech">
+              <span>Python</span>
+              <span>Librosa</span>
+              <span>Scikit-learn</span>
+              <span>NumPy</span>
+              <span>Streamlit</span>
+              <span>Grad-CAM</span>
+            </div>
+          </div>
+
+
+          <a
+            href="https://github.com/Madhumitha272005/DeepFake-Voice-Detection"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="modal-github"
+          >
+            View Deepfake Voice Detection on GitHub ↗
+          </a>
+        </>
+      )}
+
+
+      {/* =====================================================
+          PROJECT 04 — LUNG CANCER RISK PREDICTION
+          ===================================================== */}
+
+      {selectedProject === "lung" && (
+        <>
+          <div className="modal-top-labels">
+            <span className="modal-label">
+              Healthcare AI
+            </span>
+
+            <span className="modal-featured">
+              ✦ Featured Project
+            </span>
+          </div>
+
+          <h2>Lung Cancer Risk Prediction</h2>
+
+          <h4>
+            Machine Learning Healthcare Prediction
+          </h4>
+
+
+          {/* SUMMARY */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ✦ SUMMARY
+            </div>
+
+            <p>
+              Lung Cancer Risk Prediction is a machine learning
+              project focused on estimating lung cancer risk from
+              relevant health and lifestyle attributes. The project
+              demonstrates data preprocessing, exploratory analysis,
+              feature analysis, classification, prediction, and
+              model evaluation for a predictive healthcare workflow.
+            </p>
+          </div>
+
+
+          {/* PROBLEM STATEMENT */}
+
+          <div className="modal-info-box problem-box">
+            <div className="modal-box-title">
+              ⚠ PROBLEM STATEMENT
+            </div>
+
+            <p>
+              Health and lifestyle datasets may contain multiple
+              attributes that are associated with lung cancer risk.
+              Analyzing these attributes manually can be difficult,
+              creating a need for a machine learning approach that
+              can identify patterns in the available data and provide
+              a risk prediction as a decision-support output.
+            </p>
+          </div>
+
+
+          {/* PROPOSED SOLUTION */}
+
+          <div className="modal-info-box solution-box">
+            <div className="modal-box-title">
+              ◈ PROPOSED SOLUTION
+            </div>
+
+            <p>
+              The project applies data cleaning, exploratory data
+              analysis, feature processing, and machine learning
+              classification to analyze health and lifestyle
+              attributes. The trained model generates a predicted
+              risk category based on the input features and is
+              evaluated using appropriate machine learning metrics.
+            </p>
+          </div>
+
+
+          {/* OBJECTIVES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◎ OBJECTIVES
+            </div>
+
+            <ul className="modal-list">
+              <li>
+                Analyze health and lifestyle attributes related to
+                lung cancer risk.
+              </li>
+
+              <li>
+                Clean and preprocess the dataset.
+              </li>
+
+              <li>
+                Perform exploratory data analysis.
+              </li>
+
+              <li>
+                Identify useful patterns and relationships in the
+                data.
+              </li>
+
+              <li>
+                Apply machine learning classification techniques.
+              </li>
+
+              <li>
+                Generate lung cancer risk predictions.
+              </li>
+
+              <li>
+                Evaluate the predictive performance of the model.
+              </li>
+            </ul>
+          </div>
+
+
+          {/* WORKFLOW */}
+
+          <div className="modal-info-box workflow-box">
+            <div className="modal-box-title">
+              ⇢ WORKFLOW
+            </div>
+
+            <p className="modal-workflow">
+              Dataset → Data Cleaning → Exploratory Analysis →
+              Feature Processing → Model Training → Risk Prediction
+              → Model Evaluation
+            </p>
+          </div>
+
+
+          {/* KEY FEATURES */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ◉ KEY FEATURES
+            </div>
+
+            <div className="modal-feature-grid">
+              <span>Healthcare Dataset Analysis</span>
+              <span>Data Preprocessing</span>
+              <span>Exploratory Data Analysis</span>
+              <span>Feature Analysis</span>
+              <span>ML Classification</span>
+              <span>Risk Prediction</span>
+              <span>Model Evaluation</span>
+              <span>Data Visualization</span>
+            </div>
+          </div>
+
+
+          {/* TOOLS */}
+
+          <div className="modal-info-box">
+            <div className="modal-box-title">
+              ⚙ TOOLS & TECHNOLOGIES
+            </div>
+
+            <div className="modal-tech">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Scikit-learn</span>
+              <span>Matplotlib</span>
+              <span>Machine Learning</span>
+            </div>
+          </div>
+
+
+          <a
+            href="https://github.com/Madhumitha272005/lungcancer-risk-prediction"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="modal-github"
+          >
+            View Lung Cancer Project on GitHub ↗
+          </a>
+        </>
+      )}
 
     </div>
-
   </div>
-
 )}
-
-
-{selectedProject === "deepfake" && (
-
-  <div
-    className="project-modal-overlay"
-    onClick={() => setSelectedProject(null)}
-  >
-
-    <div
-      className="project-modal"
-      onClick={(event) => event.stopPropagation()}
-    >
-
-      <button
-        type="button"
-        className="modal-close"
-        onClick={() => setSelectedProject(null)}
-        aria-label="Close project details"
-      >
-        ×
-      </button>
-
-      <span className="modal-label">
-        PROJECT 03
-      </span>
-
-      <h2>
-        Deepfake Voice Detection
-      </h2>
-
-      <h4>
-        AI-Based Synthetic Audio Detection
-      </h4>
-
-      <div className="modal-section">
-
-        <h5>
-          Introduction
-        </h5>
-
-        <p>
-          Deepfake Voice Detection is an AI-based audio security
-          project designed to distinguish genuine human speech from
-          synthetic or manipulated voice recordings. The system uses
-          audio processing, feature extraction, machine learning, and
-          spectrogram-based analysis to identify characteristics
-          associated with deepfake audio.
-        </p>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Objectives
-        </h5>
-
-        <ul>
-          <li>
-            Analyze audio recordings for deepfake characteristics.
-          </li>
-
-          <li>
-            Extract meaningful features from speech signals.
-          </li>
-
-          <li>
-            Use machine learning for genuine-versus-synthetic
-            audio classification.
-          </li>
-
-          <li>
-            Apply spectrogram-based analysis to represent audio
-            information visually.
-          </li>
-
-          <li>
-            Evaluate model performance using classification metrics.
-          </li>
-
-          <li>
-            Explore explainability methods for understanding model
-            predictions.
-          </li>
-        </ul>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Workflow
-        </h5>
-
-        <p className="modal-workflow">
-          Audio Input → Preprocessing → Feature Extraction
-          → Spectrogram Analysis → ML Classification
-          → Deepfake Prediction → Explainability
-        </p>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Key Features
-        </h5>
-
-        <ul>
-          <li>Audio preprocessing</li>
-          <li>Feature extraction using Librosa</li>
-          <li>Spectrogram analysis</li>
-          <li>Deepfake audio classification</li>
-          <li>Model evaluation</li>
-          <li>Streamlit-based application</li>
-          <li>Explainability exploration</li>
-        </ul>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Technologies
-        </h5>
-
-        <div className="modal-tech">
-          <span>Python</span>
-          <span>Librosa</span>
-          <span>Scikit-learn</span>
-          <span>NumPy</span>
-          <span>Streamlit</span>
-          <span>Grad-CAM</span>
-        </div>
-
-      </div>
-
-      <a
-        href="https://github.com/Madhumitha272005/DeepFake-Voice-Detection"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="modal-github"
-      >
-        View Deepfake Voice Detection on GitHub ↗
-      </a>
-
-    </div>
-
-  </div>
-
-)}
-
-
-{selectedProject === "lung" && (
-
-  <div
-    className="project-modal-overlay"
-    onClick={() => setSelectedProject(null)}
-  >
-
-    <div
-      className="project-modal"
-      onClick={(event) => event.stopPropagation()}
-    >
-
-      <button
-        type="button"
-        className="modal-close"
-        onClick={() => setSelectedProject(null)}
-        aria-label="Close project details"
-      >
-        ×
-      </button>
-
-      <span className="modal-label">
-        PROJECT 04
-      </span>
-
-      <h2>
-        Lung Cancer Risk Prediction
-      </h2>
-
-      <h4>
-        Machine Learning Healthcare Prediction
-      </h4>
-
-      <div className="modal-section">
-
-        <h5>
-          Introduction
-        </h5>
-
-        <p>
-          Lung Cancer Risk Prediction is a machine learning project
-          focused on estimating lung cancer risk from relevant health
-          and lifestyle attributes. The project demonstrates data
-          preprocessing, exploratory analysis, feature analysis,
-          classification, and model evaluation for predictive
-          healthcare applications.
-        </p>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Objectives
-        </h5>
-
-        <ul>
-          <li>
-            Analyze health and lifestyle attributes related to
-            lung cancer risk.
-          </li>
-
-          <li>
-            Preprocess and prepare the dataset for machine learning.
-          </li>
-
-          <li>
-            Identify useful patterns and relationships within the data.
-          </li>
-
-          <li>
-            Apply machine learning classification techniques.
-          </li>
-
-          <li>
-            Evaluate the predictive performance of the trained model.
-          </li>
-
-          <li>
-            Demonstrate how machine learning can support early
-            risk-assessment workflows.
-          </li>
-        </ul>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Workflow
-        </h5>
-
-        <p className="modal-workflow">
-          Dataset → Data Cleaning → Exploratory Analysis
-          → Feature Processing → Model Training
-          → Risk Prediction → Model Evaluation
-        </p>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Key Features
-        </h5>
-
-        <ul>
-          <li>Healthcare dataset analysis</li>
-          <li>Data preprocessing</li>
-          <li>Feature analysis</li>
-          <li>Machine learning classification</li>
-          <li>Risk prediction</li>
-          <li>Model evaluation</li>
-          <li>Data visualization</li>
-        </ul>
-
-      </div>
-
-      <div className="modal-section">
-
-        <h5>
-          Technologies
-        </h5>
-
-        <div className="modal-tech">
-          <span>Python</span>
-          <span>Pandas</span>
-          <span>NumPy</span>
-          <span>Scikit-learn</span>
-          <span>Matplotlib</span>
-          <span>Machine Learning</span>
-        </div>
-
-      </div>
-
-      <a
-        href="https://github.com/Madhumitha272005/lungcancer-risk-prediction"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="modal-github"
-      >
-        View Lung Cancer Project on GitHub ↗
-      </a>
-
-    </div>
-
-  </div>
-
-)}
-
 
       {/* ================= SERVICES ================= */}
       <section id="services" className="section services-section">
